@@ -15,12 +15,14 @@ namespace WpfApplication5
         DbMapEntities map = new DbMapEntities();
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
         
+        
         public MainWindow()
         {
             InitializeComponent();
             dispatcherTimer.Tick += dispatcherTimer_Tick;
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Start();
+            
             foreach (UIElement item in world.Children)
             {
                 if (item is Path)
@@ -48,7 +50,7 @@ namespace WpfApplication5
         }
         void CountryInfo(object sender, MouseEventArgs e)
         {
-            var areas = from n in map.MapTables select new { n.CountryName, n.Area, n.Citizens, n.Capital, n.Time };
+            var areas = from n in map.MapTables.ToList() select new { n.CountryName, n.Area, n.Citizens, n.Capital, n.Time };
             foreach (var country in areas)
             {
                 if (country.CountryName.Contains(((Path)sender).Name.ToLower()))
