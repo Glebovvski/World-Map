@@ -72,6 +72,9 @@ namespace WpfApplication5
         private void country_MouseLeave(object sender, MouseEventArgs e)
         {
             ((Path)sender).Fill = Brushes.Black;
+            textBoxArea.Text = string.Empty;
+            textBoxPop.Text = string.Empty;
+            textBoxCapital.Text = string.Empty;
         }
     }
 }
