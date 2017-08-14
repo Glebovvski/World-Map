@@ -15,7 +15,6 @@ namespace WpfApplication5
         DbMapEntities map = new DbMapEntities();
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
         
-        
         public MainWindow()
         {
             InitializeComponent();
@@ -72,6 +71,7 @@ namespace WpfApplication5
         private void country_MouseLeave(object sender, MouseEventArgs e)
         {
             ((Path)sender).Fill = Brushes.Black;
+            textBoxName.Text = string.Empty;
             textBoxArea.Text = string.Empty;
             textBoxPop.Text = string.Empty;
             textBoxCapital.Text = string.Empty;
