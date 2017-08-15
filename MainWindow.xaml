@@ -1702,16 +1702,30 @@
                     <PathGeometry FillRule="Nonzero" Figures="M516.76,230.59L518.39,230.64 519.07,231.65 521.44,231.65 523.02,231.07 523.55,231.71 522.5,233.09 517.87,233.25 517.03,232.14 516.14,231.61 516.76,230.59 516.76,230.59z" />
                 </Path.Data>
             </Path>
-            <TextBox x:Name="textBoxName" Height="56" Canvas.Left="1085" TextWrapping="Wrap" Canvas.Top="23" Width="162" FontSize="20"/>
-            <TextBox x:Name="textBoxArea" Height="40" Canvas.Left="1085" TextWrapping="Wrap" Canvas.Top="79" Width="162" FontSize="20"/>
-            <TextBox x:Name="textBoxPop" Height="40" Canvas.Left="1085" TextWrapping="Wrap" Canvas.Top="119" Width="162" FontSize="20"/>
-            <Label Content="Country:" Canvas.Top="29" Width="65" Canvas.Left="1015"/>
-            <Label Content="Area:" Canvas.Top="85" Width="65" RenderTransformOrigin="0.492,0.423" Canvas.Left="1015"/>
-            <Label Content="Population:" Canvas.Top="121" Width="83" RenderTransformOrigin="0.492,0.423" Canvas.Left="1015"/>
-            <TextBox x:Name="textBoxCapital" Height="40" Canvas.Left="1085" TextWrapping="Wrap" Canvas.Top="154" Width="162" FontSize="20"/>
-            <Label Content="Capital:" Canvas.Top="164" Width="83" RenderTransformOrigin="0.492,0.423" Canvas.Left="1015"/>
-            <TextBox x:Name="textBoxTime" Height="58" Canvas.Left="1085" TextWrapping="Wrap" Canvas.Top="191" Width="162" FontSize="20"/>
-            <Label Content="Time:" Canvas.Top="202" Width="83" RenderTransformOrigin="0.492,0.423" Canvas.Left="1015"/>
+            <Grid x:Name="info" Canvas.Left="1021" Canvas.Top="26">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="textBoxName"    Grid.Row="0" Grid.Column="1"  Height="56" Canvas.Left="1085" TextWrapping="Wrap" Canvas.Top="23" Width="162" FontSize="20"/>
+                <TextBox x:Name="textBoxArea"    Grid.Row="1" Grid.Column="1"  Height="40" Canvas.Left="1085" TextWrapping="Wrap" Canvas.Top="79" Width="162" FontSize="20"/>
+                <TextBox x:Name="textBoxPop"     Grid.Row="2" Grid.Column="1"  Height="40" Canvas.Left="1085" TextWrapping="Wrap" Canvas.Top="119" Width="162" FontSize="20"/>
+                <TextBox x:Name="textBoxCapital" Grid.Row="3" Grid.Column="1"  Height="40" Canvas.Left="1085" TextWrapping="Wrap" Canvas.Top="154" Width="162" FontSize="20"/>
+                <TextBox x:Name="textBoxTime"    Grid.Row="4" Grid.Column="1"  Height="58" Canvas.Left="1085" TextWrapping="Wrap" Canvas.Top="198" Width="162" FontSize="20"/>
+
+                <Label Content="Country:"    Grid.Row="0" Grid.Column="0" Canvas.Top="29" Width="65" Canvas.Left="1015"/>
+                <Label Content="Area:"       Grid.Row="1" Grid.Column="0" Canvas.Top="85" Width="65" RenderTransformOrigin="0.492,0.423" Canvas.Left="1015"/>
+                <Label Content="Population:" Grid.Row="2" Grid.Column="0" Canvas.Top="121" Width="83" RenderTransformOrigin="0.492,0.423" Canvas.Left="1015"/>
+                <Label Content="Capital:"    Grid.Row="3" Grid.Column="0" Canvas.Top="164" Width="83" RenderTransformOrigin="0.492,0.423" Canvas.Left="1015"/>
+                <Label Content="Time:"       Grid.Row="4" Grid.Column="0" Canvas.Top="202" Width="83" RenderTransformOrigin="0.492,0.423" Canvas.Left="1015"/>
+            </Grid>
         </Canvas>
     </Grid>
 </Window>

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Data;
 using System.Linq;
-using System.Timers;
+using System.Windows.Controls;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Collections.Generic;
 
 namespace WpfApplication5
 {
@@ -14,14 +15,18 @@ namespace WpfApplication5
     {
         DbMapEntities map = new DbMapEntities();
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
-        
         public MainWindow()
         {
             InitializeComponent();
             dispatcherTimer.Tick += dispatcherTimer_Tick;
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Start();
-            
+
+            foreach (Control item in info.Children)
+            {
+                if (item is TextBox) (item as TextBox).IsReadOnly = true;
+            }
+
             foreach (UIElement item in world.Children)
             {
                 if (item is Path)
@@ -71,10 +76,11 @@ namespace WpfApplication5
         private void country_MouseLeave(object sender, MouseEventArgs e)
         {
             ((Path)sender).Fill = Brushes.Black;
-            textBoxName.Text = string.Empty;
-            textBoxArea.Text = string.Empty;
-            textBoxPop.Text = string.Empty;
-            textBoxCapital.Text = string.Empty;
+            foreach(Control item in info.Children)
+            {
+                if (item is TextBox) (item as TextBox).Text = string.Empty;
+                if (item.Name=="TextBoxTime") continue;
+            }
         }
     }
 }
